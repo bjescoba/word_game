@@ -1,24 +1,26 @@
 var main = function() {
     $('.word-box').on('keypress', function(e) {
+    $('#errors').empty();
     if(e.keyCode == 13){
         var word = $('.word-box').val();
         if(word.length === randomN && word[0] === randomL){
                 $('.word-bank').append('<li>'+word+'</li>');
                 $('.word-box').val('');
         } else if(word.length !== randomN && word[0] !== randomL){
-            alert('Must be ' + randomN + ' characters long and begin with the letter \"' + randomL + '.\"');
-            $('.word-box').val('');
+            $('#errors').append('Error: Must be ' + randomN + ' characters long and begin with the letter \"' + randomL + '.\"');
+            $('.word-box').select();
         } else if(word.length !== randomN){
-            alert('Must be ' + randomN + ' characters long.');
-            $('.word-box').val('');
+            $('#errors').append('Error: Must be ' + randomN + ' characters long.');
+            $('.word-box').select();
         } else{
-            alert('Must begin with the letter \"' + randomL + '.\"');
-            $('.word-box').val('');
+            $('#errors').append('Error: Must begin with the letter \"' + randomL + '.\"');
+            $('.word-box').select();
         }
     }
 });
 
 	$('#start_button').click(function(){
+		$('#restrictions').empty();
 		countdown;
 		setInterval(countdown, 1000);
 		$('#start_button').prop('disabled', true);
