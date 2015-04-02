@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WORD GAME</title>
+    <script>
+        function randomNumber(min, max){
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+
+		function randomLetter(){
+			var alphabet = "abcdefghijklmnopqrstuvwxyz";
+			var letter = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+			return letter;
+		}
+	</script>
+</head>
+
+<body>
+	<center>
+		<h1>THE WORD GAME!</h1> <br />
+		
+        <button id="start_button" autofocus="autofocus">Start Game!</button> <br />
+		Time Remaining:<div class="timer">60</div> <br />
+		
+        <script>
+			var randomN = randomNumber(4,6);
+			var randomL = randomLetter();
+		</script>
+                
+        <p id='restrictions'></p>
+	</center>
+
+	<div class="container">
+		<form action="#">
+			<label>Enter Word:</label>
+			<input class="word-box" type="text" title="Please enter a word." placeholder="Enter Word" disabled />
+			<br /><br />
+		</form>
+
+		<ol class="word-bank" style="border: 3px solid #00ff00; width: 50%"></ol>
+	</div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="app.js"></script>
+</body>
+
+</html>
