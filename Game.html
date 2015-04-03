@@ -2,6 +2,10 @@
 <html>
 <head>
     <title>WORD GAME</title>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+
     <script>
         function randomNumber(min, max){
             return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -20,8 +24,8 @@
 		<h1>THE WORD GAME!</h1> <br />
 	</center>
 
-		<button id="how_to_play" align="right">How to Play</button>
-		<div id="instructions" style="display: none">
+		<button id="how_to_play">How to Play</button>
+		<div id="instructions" style="display: none" data-title="Instructions Popover" data-toggle="popover" data-content="djfskld">	
 			<p>Rules</p>
 			<p>1. Type as many words as you can before the timer runs out</p>
 			<p>2. Words must be the same length as the given length</p>
@@ -53,6 +57,7 @@
 	</div>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="js/bootstrap.js"></script>
 	<script src="app.js"></script>
 </body>
 

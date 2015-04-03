@@ -26,12 +26,15 @@ var main = function() {
 		$('#start_button').prop('disabled', true);
 		$('.word-box').prop('disabled', false);
 		$('.word-box').focus();
-        	$('#restrictions').append(randomN + "-letter word starting with the letter \"" + randomL + ".\"")
+        $('#restrictions').append(randomN + "-letter word starting with the letter \"" + randomL + ".\"")
 	});
 
 	$('#how_to_play').click(function() {
 		$('#instructions').toggle();
+	//	$('#instructions').tooltip();
+	//	$('#instructions').popover();
 	});
+
 };
 
 	//timer
