@@ -18,16 +18,26 @@
 <body>
 	<center>
 		<h1>THE WORD GAME!</h1> <br />
-		
-        <button id="start_button" autofocus="autofocus">Start Game!</button> <br />
-		Time Remaining:<div class="timer">60</div> <br />
+	</center>
+
+		<button id="how_to_play" align="right">How to Play</button>
+		<div id="instructions" style="display: none">
+			<p>Rules</p>
+			<p>1. Type as many words as you can before the timer runs out</p>
+			<p>2. Words must be the same length as the given length</p>
+			<p>3. Words must begin with the specified character</p>
+		</div>
+
+	<center>
+        <button id="start_button" autofocus="autofocus">Start Game!</button>
+        <br />Time Remaining:<div class="timer">60</div> <br />
 		
         <script>
 			var randomN = randomNumber(4,6);
 			var randomL = randomLetter();
 		</script>
                 
-        <p id="restrictions"></p>
+       	<p id="restrictions"></p>
 	</center>
 
 	<div class="container">

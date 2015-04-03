@@ -29,7 +29,9 @@ var main = function() {
         	$('#restrictions').append(randomN + "-letter word starting with the letter \"" + randomL + ".\"")
 	});
 
-	$('.btn').addClass('disabled');
+	$('#how_to_play').click(function() {
+		$('#instructions').toggle();
+	});
 };
 
 	//timer
