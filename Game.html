@@ -4,6 +4,7 @@
     <title>WORD GAME</title>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
 
     <script>
@@ -16,6 +17,10 @@
 			var letter = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
 			return letter;
 		}
+
+		var randomN = randomNumber(4,6);
+		var randomL = randomLetter();
+
 	</script>
 </head>
 
@@ -27,22 +32,26 @@
 		<button id="how_to_play">How to Play</button>
 		<div id="instructions" style="display: none" data-title="Instructions Popover" data-toggle="popover" data-content="djfskld">	
 			<p>Rules</p>
-			<p>1. Type as many words as you can before the timer runs out</p>
-			<p>2. Words must be the same length as the given length</p>
-			<p>3. Words must begin with the specified character</p>
+			<p>1. Click the 'Start Game' button.</p>
+			<p>2. You have 60 seconds to enter as many words as possible.</p>
+			<p>3. To record a word, type it and press the enter key.</p>
+			<p>4. Words must comply with the length and letter restrictions given.</p>
 		</div>
 
 	<center>
         <button id="start_button" autofocus="autofocus">Start Game!</button>
         <br />Time Remaining:<div class="timer">60</div> <br />
-		
-        <script>
-			var randomN = randomNumber(4,6);
-			var randomL = randomLetter();
-		</script>
                 
        	<p id="restrictions"></p>
 	</center>
+
+	<div id='wrapper' style='text-align:center'>
+		<h4 style='float:left'>Score: &nbsp;
+			<div id="score" style="float:right"></div>
+		</h4>
+	</div>
+
+	<br /><br />
 
 	<div class="container">
 		<form action="#">
@@ -56,8 +65,11 @@
 		<ol class="word-bank" style="border: 3px solid #00ff00; width: 50%"></ol>
 	</div>
 
+	<div id="dialog-box" title="Game Over!"><p id="dialog-text"></p></div>
+
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script type="js/bootstrap.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<script src="js/bootstrap.js"></script>
 	<script src="app.js"></script>
 </body>
 
